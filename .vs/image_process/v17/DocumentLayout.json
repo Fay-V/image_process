@@ -1,0 +1,154 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Fate\\source\\repos\\image_process\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E42B1D7E-B4F3-4CD7-8919-19C2CD63816C}|image_process.csproj|c:\\users\\fate\\source\\repos\\image_process\\histogramhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E42B1D7E-B4F3-4CD7-8919-19C2CD63816C}|image_process.csproj|solutionrelative:histogramhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E42B1D7E-B4F3-4CD7-8919-19C2CD63816C}|image_process.csproj|C:\\Users\\Fate\\source\\repos\\image_process\\form_histogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E42B1D7E-B4F3-4CD7-8919-19C2CD63816C}|image_process.csproj|solutionrelative:form_histogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E42B1D7E-B4F3-4CD7-8919-19C2CD63816C}|image_process.csproj|c:\\users\\fate\\source\\repos\\image_process\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E42B1D7E-B4F3-4CD7-8919-19C2CD63816C}|image_process.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E42B1D7E-B4F3-4CD7-8919-19C2CD63816C}|image_process.csproj|c:\\users\\fate\\source\\repos\\image_process\\form_histogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E42B1D7E-B4F3-4CD7-8919-19C2CD63816C}|image_process.csproj|solutionrelative:form_histogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E42B1D7E-B4F3-4CD7-8919-19C2CD63816C}|image_process.csproj|C:\\Users\\Fate\\source\\repos\\image_process\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E42B1D7E-B4F3-4CD7-8919-19C2CD63816C}|image_process.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E42B1D7E-B4F3-4CD7-8919-19C2CD63816C}|image_process.csproj|c:\\users\\fate\\source\\repos\\image_process\\form_histogram.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E42B1D7E-B4F3-4CD7-8919-19C2CD63816C}|image_process.csproj|solutionrelative:form_histogram.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E42B1D7E-B4F3-4CD7-8919-19C2CD63816C}|image_process.csproj|c:\\users\\fate\\source\\repos\\image_process\\form_subtract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E42B1D7E-B4F3-4CD7-8919-19C2CD63816C}|image_process.csproj|solutionrelative:form_subtract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E42B1D7E-B4F3-4CD7-8919-19C2CD63816C}|image_process.csproj|C:\\Users\\Fate\\source\\repos\\image_process\\form_subtract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E42B1D7E-B4F3-4CD7-8919-19C2CD63816C}|image_process.csproj|solutionrelative:form_subtract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\Fate\\source\\repos\\image_process\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\Fate\\source\\repos\\image_process\\Form1.cs",
+              "RelativeToolTip": "Form1.cs",
+              "ViewState": "AgIAAKkAAAAAAQAAAAAiwLEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T05:31:19.861Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "form_Histogram.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Fate\\source\\repos\\image_process\\form_Histogram.Designer.cs",
+              "RelativeDocumentMoniker": "form_Histogram.Designer.cs",
+              "ToolTip": "C:\\Users\\Fate\\source\\repos\\image_process\\form_Histogram.Designer.cs",
+              "RelativeToolTip": "form_Histogram.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T13:08:35.207Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "form_Histogram.cs",
+              "DocumentMoniker": "C:\\Users\\Fate\\source\\repos\\image_process\\form_Histogram.cs",
+              "RelativeDocumentMoniker": "form_Histogram.cs",
+              "ToolTip": "C:\\Users\\Fate\\source\\repos\\image_process\\form_Histogram.cs",
+              "RelativeToolTip": "form_Histogram.cs",
+              "ViewState": "AgIAAAYAAABgZmZmZmYkwCIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T04:00:38.574Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Fate\\source\\repos\\image_process\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\Fate\\source\\repos\\image_process\\Form1.cs [Design]",
+              "RelativeToolTip": "Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T03:53:31.088Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "form_Histogram.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Fate\\source\\repos\\image_process\\form_Histogram.cs",
+              "RelativeDocumentMoniker": "form_Histogram.cs",
+              "ToolTip": "C:\\Users\\Fate\\source\\repos\\image_process\\form_Histogram.cs [Design]",
+              "RelativeToolTip": "form_Histogram.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T13:16:43.221Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HistogramHelper.cs",
+              "DocumentMoniker": "C:\\Users\\Fate\\source\\repos\\image_process\\HistogramHelper.cs",
+              "RelativeDocumentMoniker": "HistogramHelper.cs",
+              "ToolTip": "C:\\Users\\Fate\\source\\repos\\image_process\\HistogramHelper.cs",
+              "RelativeToolTip": "HistogramHelper.cs",
+              "ViewState": "AgIAAJkAAACgmZmZmZkwwIAAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T03:32:14.511Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "form_Subtract.cs",
+              "DocumentMoniker": "C:\\Users\\Fate\\source\\repos\\image_process\\form_Subtract.cs",
+              "RelativeDocumentMoniker": "form_Subtract.cs",
+              "ToolTip": "C:\\Users\\Fate\\source\\repos\\image_process\\form_Subtract.cs",
+              "RelativeToolTip": "form_Subtract.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAuwBIAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T14:42:59.415Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "form_Subtract.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Fate\\source\\repos\\image_process\\form_Subtract.cs",
+              "RelativeDocumentMoniker": "form_Subtract.cs",
+              "ToolTip": "C:\\Users\\Fate\\source\\repos\\image_process\\form_Subtract.cs [Design]",
+              "RelativeToolTip": "form_Subtract.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T14:42:06.185Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
