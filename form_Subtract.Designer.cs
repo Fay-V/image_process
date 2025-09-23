@@ -28,71 +28,81 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            pictureBox3 = new PictureBox();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            pictureBox_foreground = new PictureBox();
+            pictureBox_background = new PictureBox();
+            pictureBox_result = new PictureBox();
+            button_loadBackground = new Button();
+            button_executeSubtraction = new Button();
+            button_loadForeground = new Button();
             menuStrip1 = new MenuStrip();
             toolStripMenuItem1 = new ToolStripMenuItem();
             toolStripMenuItem2 = new ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            openFileDialog1 = new OpenFileDialog();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_foreground).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_background).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_result).BeginInit();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
-            // pictureBox1
+            // pictureBox_foreground
             // 
-            pictureBox1.Location = new Point(38, 86);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(250, 248);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            pictureBox_foreground.BorderStyle = BorderStyle.FixedSingle;
+            pictureBox_foreground.Location = new Point(38, 86);
+            pictureBox_foreground.Name = "pictureBox_foreground";
+            pictureBox_foreground.Size = new Size(250, 248);
+            pictureBox_foreground.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox_foreground.TabIndex = 0;
+            pictureBox_foreground.TabStop = false;
             // 
-            // pictureBox2
+            // pictureBox_background
             // 
-            pictureBox2.Location = new Point(306, 86);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(250, 248);
-            pictureBox2.TabIndex = 1;
-            pictureBox2.TabStop = false;
+            pictureBox_background.BorderStyle = BorderStyle.FixedSingle;
+            pictureBox_background.Location = new Point(306, 86);
+            pictureBox_background.Name = "pictureBox_background";
+            pictureBox_background.Size = new Size(250, 248);
+            pictureBox_background.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox_background.TabIndex = 1;
+            pictureBox_background.TabStop = false;
             // 
-            // pictureBox3
+            // pictureBox_result
             // 
-            pictureBox3.Location = new Point(574, 86);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(250, 248);
-            pictureBox3.TabIndex = 2;
-            pictureBox3.TabStop = false;
+            pictureBox_result.BorderStyle = BorderStyle.FixedSingle;
+            pictureBox_result.Location = new Point(574, 86);
+            pictureBox_result.Name = "pictureBox_result";
+            pictureBox_result.Size = new Size(250, 248);
+            pictureBox_result.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox_result.TabIndex = 2;
+            pictureBox_result.TabStop = false;
             // 
-            // button1
+            // button_loadBackground
             // 
-            button1.Location = new Point(397, 371);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 3;
-            button1.Text = "Load";
-            button1.UseVisualStyleBackColor = true;
+            button_loadBackground.Location = new Point(397, 371);
+            button_loadBackground.Name = "button_loadBackground";
+            button_loadBackground.Size = new Size(75, 23);
+            button_loadBackground.TabIndex = 3;
+            button_loadBackground.Text = "Load";
+            button_loadBackground.UseVisualStyleBackColor = true;
+            button_loadBackground.Click += button_load_file_Click;
             // 
-            // button2
+            // button_executeSubtraction
             // 
-            button2.Location = new Point(666, 371);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 4;
-            button2.Text = "Subtract";
-            button2.UseVisualStyleBackColor = true;
+            button_executeSubtraction.Location = new Point(666, 371);
+            button_executeSubtraction.Name = "button_executeSubtraction";
+            button_executeSubtraction.Size = new Size(75, 23);
+            button_executeSubtraction.TabIndex = 4;
+            button_executeSubtraction.Text = "Subtract";
+            button_executeSubtraction.UseVisualStyleBackColor = true;
+            button_executeSubtraction.Click += button_execute_subtraction_Click;
             // 
-            // button3
+            // button_loadForeground
             // 
-            button3.Location = new Point(130, 368);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 5;
-            button3.Text = "Load";
-            button3.UseVisualStyleBackColor = true;
+            button_loadForeground.Location = new Point(130, 368);
+            button_loadForeground.Name = "button_loadForeground";
+            button_loadForeground.Size = new Size(75, 23);
+            button_loadForeground.TabIndex = 5;
+            button_loadForeground.Text = "Load";
+            button_loadForeground.UseVisualStyleBackColor = true;
+            button_loadForeground.Click += button_load_file_Click;
             // 
             // menuStrip1
             // 
@@ -113,27 +123,32 @@
             // toolStripMenuItem2
             // 
             toolStripMenuItem2.Name = "toolStripMenuItem2";
-            toolStripMenuItem2.Size = new Size(180, 22);
+            toolStripMenuItem2.Size = new Size(150, 22);
             toolStripMenuItem2.Text = "Toggle On/Off";
+            // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
             // 
             // form_Subtract
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(853, 435);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(pictureBox3);
-            Controls.Add(pictureBox2);
-            Controls.Add(pictureBox1);
+            Controls.Add(button_loadForeground);
+            Controls.Add(button_executeSubtraction);
+            Controls.Add(button_loadBackground);
+            Controls.Add(pictureBox_result);
+            Controls.Add(pictureBox_background);
+            Controls.Add(pictureBox_foreground);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "form_Subtract";
             Text = "Image Subtraction";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            Load += form_Subtract_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox_foreground).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_background).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_result).EndInit();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
@@ -142,14 +157,15 @@
 
         #endregion
 
-        private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox3;
-        private Button button1;
-        private Button button2;
-        private Button button3;
+        private PictureBox pictureBox_foreground;
+        private PictureBox pictureBox_background;
+        private PictureBox pictureBox_result;
+        private Button button_loadBackground;
+        private Button button_executeSubtraction;
+        private Button button_loadForeground;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem toolStripMenuItem1;
         private ToolStripMenuItem toolStripMenuItem2;
+        private OpenFileDialog openFileDialog1;
     }
 }

@@ -179,7 +179,8 @@ namespace image_process
 
         private void subtract_tab_Click(object sender, EventArgs e)
         {
-            
+            form_Subtract subtractionForm = new form_Subtract();
+            subtractionForm.Show();
             
         }
 
@@ -188,10 +189,6 @@ namespace image_process
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox2.BorderStyle = BorderStyle.FixedSingle;
             openFileDialog1.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp|All Files (*.*)|*.*";
         }
     }

@@ -16,3 +16,4 @@ C:\Users\Fate\source\repos\image_process\obj\Debug\net8.0-windows\image_process.
 C:\Users\Fate\source\repos\image_process\obj\Debug\net8.0-windows\ref\image_process.dll
 C:\Users\Fate\source\repos\image_process\obj\Debug\net8.0-windows\image_process.form_Histogram.resources
 C:\Users\Fate\source\repos\image_process\obj\Debug\net8.0-windows\image_process.form_Subtract.resources
+C:\Users\Fate\source\repos\image_process\obj\Debug\net8.0-windows\image_process.sourcelink.json
