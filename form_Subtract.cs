@@ -110,6 +110,7 @@ namespace image_process
                     timer_ImageLoad.Stop();
                     timer_Subtraction.Start();
                     button_executeSubtraction.Text = "Stop Subtraction";
+                    webcam_subtraction = true;
                 } else if (webcam_subtraction)
                 {
                     timer_Subtraction.Stop();
@@ -211,7 +212,9 @@ namespace image_process
                 timer_Subtraction.Stop();
                 timer_ImageLoad.Start();
                 button_executeSubtraction.Text = "Subtraction";
-                MessageBox.Show("Images are lacking");   
+                webcam_subtraction = false;
+                MessageBox.Show("Images are lacking");
+                
                 return;
             }
 
@@ -223,7 +226,9 @@ namespace image_process
                 timer_ImageLoad.Start();
                 timer_Subtraction.Stop();
                 button_executeSubtraction.Text = "Subtraction";
+                webcam_subtraction = false;
                 MessageBox.Show("Image sizes do not match");
+                
                 return;
             }
             Color mygreen = Color.FromArgb(0, 255, 0);

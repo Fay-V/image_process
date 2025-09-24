@@ -40,8 +40,6 @@
             filters_sepia = new ToolStripMenuItem();
             filters_colorInversion = new ToolStripMenuItem();
             filters_histogram = new ToolStripMenuItem();
-            webcam_tab = new ToolStripMenuItem();
-            webcam_toggle = new ToolStripMenuItem();
             subtract_tab = new ToolStripMenuItem();
             openFileDialog1 = new OpenFileDialog();
             saveFileDialog1 = new SaveFileDialog();
@@ -74,7 +72,7 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { file_tab, filters_tab, webcam_tab, subtract_tab });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { file_tab, filters_tab, subtract_tab });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 24);
@@ -144,19 +142,6 @@
             filters_histogram.Text = "Histogram";
             filters_histogram.Click += filters_histogram_Click;
             // 
-            // webcam_tab
-            // 
-            webcam_tab.DropDownItems.AddRange(new ToolStripItem[] { webcam_toggle });
-            webcam_tab.Name = "webcam_tab";
-            webcam_tab.Size = new Size(100, 20);
-            webcam_tab.Text = "Webcam Mode";
-            // 
-            // webcam_toggle
-            // 
-            webcam_toggle.Name = "webcam_toggle";
-            webcam_toggle.Size = new Size(128, 22);
-            webcam_toggle.Text = "Toggle On";
-            // 
             // subtract_tab
             // 
             subtract_tab.Name = "subtract_tab";
@@ -225,8 +210,6 @@
         private ToolStripMenuItem filters_histogram;
         private SaveFileDialog saveFileDialog1;
         private ToolStripMenuItem filters_sepia;
-        private ToolStripMenuItem webcam_tab;
-        private ToolStripMenuItem webcam_toggle;
         private Label label_source;
         private Label label1;
         private ToolStripMenuItem subtract_tab;
