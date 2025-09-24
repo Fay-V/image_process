@@ -127,12 +127,22 @@
             // 
             toggle_WebcamMode.Name = "toggle_WebcamMode";
             toggle_WebcamMode.Size = new Size(180, 22);
-            toggle_WebcamMode.Text = "Toggle On/Off";
-            toggle_WebcamMode.Click += toggle_WebcamMode_Click;
+            toggle_WebcamMode.Text = "Toggle On/Off (Off)";
+            toggle_WebcamMode.Click += button_toggle_Webcam_Click;
             // 
             // openFileDialog1
             // 
             openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // timer_Subtraction
+            // 
+            timer_Subtraction.Interval = 500;
+            timer_Subtraction.Tick += timer_Subtraction_Tick;
+            // 
+            // timer_ImageLoad
+            // 
+            timer_ImageLoad.Interval = 200;
+            timer_ImageLoad.Tick += timer_ImageLoad_Tick;
             // 
             // form_Subtract
             // 

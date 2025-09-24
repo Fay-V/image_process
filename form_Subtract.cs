@@ -58,7 +58,7 @@ namespace image_process
         private void button_toggle_Webcam_Click(object sender, EventArgs e)
         {
 
-            if (webCamMode)
+            if (!webCamMode)
             {
                 toggle_WebcamMode.Text = "Toggle On/Off (On)";
                 button_loadForeground.Enabled = false;
@@ -69,7 +69,7 @@ namespace image_process
                 {
                     myDevice = devices[0];
                     myDevice.ShowWindow(pictureBox_foreground);
-
+                    webCamMode = true;
 
                 }
                 else
@@ -80,15 +80,46 @@ namespace image_process
             }
             else
             {
+                if (myDevice != null)
+                {
+                    myDevice.Stop();
+                    timer_ImageLoad.Stop();
+                    pictureBox_foreground.Image = null;
+                }
+                webCamMode = false;
                 toggle_WebcamMode.Text = "Toggle On/Off (Off)";
                 button_loadForeground.Enabled = true;
-                button_loadBackground.Enabled = true;
+                //sbutton_loadBackground.Enabled = true;
             }
         }
-
+        private bool webcam_subtraction = false;
         private void button_execute_subtraction_Click(object sender, EventArgs e)
         {
+            if (webCamMode)
+            {
+                //execute subtraction repeatedly, no questions asked.
 
+                if(!webcam_subtraction)
+                {
+                    if (pictureBox_background == null)
+                    {
+                        MessageBox.Show("Background image is lacking");
+                        return;
+                    }
+
+                    timer_ImageLoad.Stop();
+                    timer_Subtraction.Start();
+                    button_executeSubtraction.Text = "Stop Subtraction";
+                } else if (webcam_subtraction)
+                {
+                    timer_Subtraction.Stop();
+                    timer_ImageLoad.Start();
+                    button_executeSubtraction.Text = "Subtraction";
+                    webcam_subtraction = false;
+                }
+                Console.WriteLine("Subtraction webcam run executed once");
+                return;
+            }
 
             if (pictureBox_foreground.Image == null || pictureBox_background.Image == null)
             {
@@ -105,15 +136,10 @@ namespace image_process
                 return;
             }
 
-            if (webCamMode)
-            {
-                //execute subtraction repeatedly, no questions asked.
-                timer_Subtraction_Tick();
-                return;
-            }
+            
 
-            Color mygreen = Color.FromArgb(109, 230, 27);
-            // int greygreen = (mygreen.R + mygreen.G + mygreen.B) / 3;
+            Color mygreen = Color.FromArgb(0, 255, 0);
+            int greygreen = (mygreen.R + mygreen.G + mygreen.B) / 3;
             int threshold = 5;
 
             Bitmap resultImage = new Bitmap(pictureA.Width, pictureA.Height);
@@ -125,14 +151,15 @@ namespace image_process
                     Color pixel = pictureA.GetPixel(x, y);
                     Color backpixel = pictureB.GetPixel(x, y);
 
-                    //int grey = (pixel.R + pixel.G + pixel.B) / 3;
-                    //int subtractvalue = Math.Abs(greygreen - grey);
-                    int subtractvalue1 = Math.Abs(mygreen.R - pixel.R);
-                    int subtractvalue2 = Math.Abs(mygreen.G - pixel.G);
-                    int subtractvalue3 = Math.Abs(mygreen.B - pixel.B);
+                    int grey = (pixel.R + pixel.G + pixel.B) / 3;
+                    int subtractvalue = Math.Abs(greygreen - grey);
 
-                    //if (subtractvalue <= threshold)
-                    if (subtractvalue1 <= threshold && subtractvalue2 <= threshold && subtractvalue3 <= threshold)
+                    /*int subtractvalue1 = Math.Abs(mygreen.R - pixel.R);
+                    int subtractvalue2 = Math.Abs(mygreen.G - pixel.G);
+                    int subtractvalue3 = Math.Abs(mygreen.B - pixel.B);*/
+
+                    if (subtractvalue <= threshold)
+                    //if (subtractvalue1 <= threshold && subtractvalue2 <= threshold && subtractvalue3 <= threshold)
                     {
                         resultImage.SetPixel(x, y, backpixel);
                     }
@@ -158,16 +185,49 @@ namespace image_process
                 {
                     Bitmap img = (Bitmap)Clipboard.GetImage();
                     pictureBox_foreground.Image = img;
+                    pictureBox_foreground.Refresh();
                 }
             }
         }
 
-        private void timer_Subtraction_Tick()
+        private void timer_Subtraction_Tick(object sender, EventArgs e)
         {
+            Console.WriteLine("Subtraction webcamtick running");
+            
+            if (myDevice != null)
+            {
+                myDevice.Sendmessage();
+
+                if (Clipboard.ContainsImage())
+                {
+                    Bitmap img = (Bitmap)Clipboard.GetImage();
+                    pictureBox_foreground.Image = img;
+                    pictureBox_foreground.Refresh();
+                }
+            }
+
+            if (pictureBox_foreground.Image == null || pictureBox_background.Image == null)
+            {
+                timer_Subtraction.Stop();
+                timer_ImageLoad.Start();
+                button_executeSubtraction.Text = "Subtraction";
+                MessageBox.Show("Images are lacking");   
+                return;
+            }
+
             Bitmap pictureA = new Bitmap(pictureBox_foreground.Image);
             Bitmap pictureB = new Bitmap(pictureBox_background.Image);
-            Color mygreen = Color.FromArgb(109, 230, 27);
-            // int greygreen = (mygreen.R + mygreen.G + mygreen.B) / 3;
+
+            if (pictureA.Height != pictureB.Height || pictureA.Width != pictureB.Width)
+            {
+                timer_ImageLoad.Start();
+                timer_Subtraction.Stop();
+                button_executeSubtraction.Text = "Subtraction";
+                MessageBox.Show("Image sizes do not match");
+                return;
+            }
+            Color mygreen = Color.FromArgb(0, 255, 0);
+            int greygreen = (mygreen.R + mygreen.G + mygreen.B) / 3;
             int threshold = 5;
 
             Bitmap resultImage = new Bitmap(pictureA.Width, pictureA.Height);
@@ -179,14 +239,14 @@ namespace image_process
                     Color pixel = pictureA.GetPixel(x, y);
                     Color backpixel = pictureB.GetPixel(x, y);
 
-                    //int grey = (pixel.R + pixel.G + pixel.B) / 3;
-                    //int subtractvalue = Math.Abs(greygreen - grey);
-                    int subtractvalue1 = Math.Abs(mygreen.R - pixel.R);
+                    int grey = (pixel.R + pixel.G + pixel.B) / 3;
+                    int subtractvalue = Math.Abs(greygreen - grey);
+                    /*int subtractvalue1 = Math.Abs(mygreen.R - pixel.R);
                     int subtractvalue2 = Math.Abs(mygreen.G - pixel.G);
-                    int subtractvalue3 = Math.Abs(mygreen.B - pixel.B);
+                    int subtractvalue3 = Math.Abs(mygreen.B - pixel.B);*/
 
-                    //if (subtractvalue <= threshold)
-                    if (subtractvalue1 <= threshold && subtractvalue2 <= threshold && subtractvalue3 <= threshold)
+                    if (subtractvalue <= threshold)
+                    //if (subtractvalue1 <= threshold && subtractvalue2 <= threshold && subtractvalue3 <= threshold)
                     {
                         resultImage.SetPixel(x, y, backpixel);
                     }
@@ -205,11 +265,6 @@ namespace image_process
         public void form_Subtract_Load(object sender, EventArgs e)
         {
             openFileDialog1.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp|All Files (*.*)|*.*";
-        }
-
-        private void toggle_WebcamMode_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
