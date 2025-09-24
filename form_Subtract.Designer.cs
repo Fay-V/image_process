@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             pictureBox_foreground = new PictureBox();
             pictureBox_background = new PictureBox();
             pictureBox_result = new PictureBox();
@@ -36,8 +37,10 @@
             button_loadForeground = new Button();
             menuStrip1 = new MenuStrip();
             toolStripMenuItem1 = new ToolStripMenuItem();
-            toolStripMenuItem2 = new ToolStripMenuItem();
+            toggle_WebcamMode = new ToolStripMenuItem();
             openFileDialog1 = new OpenFileDialog();
+            timer_Subtraction = new System.Windows.Forms.Timer(components);
+            timer_ImageLoad = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox_foreground).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox_background).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox_result).BeginInit();
@@ -115,16 +118,17 @@
             // 
             // toolStripMenuItem1
             // 
-            toolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem2 });
+            toolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { toggle_WebcamMode });
             toolStripMenuItem1.Name = "toolStripMenuItem1";
             toolStripMenuItem1.Size = new Size(100, 20);
             toolStripMenuItem1.Text = "Webcam Mode";
             // 
-            // toolStripMenuItem2
+            // toggle_WebcamMode
             // 
-            toolStripMenuItem2.Name = "toolStripMenuItem2";
-            toolStripMenuItem2.Size = new Size(150, 22);
-            toolStripMenuItem2.Text = "Toggle On/Off";
+            toggle_WebcamMode.Name = "toggle_WebcamMode";
+            toggle_WebcamMode.Size = new Size(180, 22);
+            toggle_WebcamMode.Text = "Toggle On/Off";
+            toggle_WebcamMode.Click += toggle_WebcamMode_Click;
             // 
             // openFileDialog1
             // 
@@ -165,7 +169,9 @@
         private Button button_loadForeground;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem toolStripMenuItem1;
-        private ToolStripMenuItem toolStripMenuItem2;
+        private ToolStripMenuItem toggle_WebcamMode;
         private OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Timer timer_Subtraction;
+        private System.Windows.Forms.Timer timer_ImageLoad;
     }
 }

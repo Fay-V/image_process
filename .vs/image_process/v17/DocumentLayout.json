@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Fate\\source\\repos\\image_process\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E42B1D7E-B4F3-4CD7-8919-19C2CD63816C}|image_process.csproj|C:\\Users\\Fate\\source\\repos\\image_process\\form_subtract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E42B1D7E-B4F3-4CD7-8919-19C2CD63816C}|image_process.csproj|solutionrelative:form_subtract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E42B1D7E-B4F3-4CD7-8919-19C2CD63816C}|image_process.csproj|c:\\users\\fate\\source\\repos\\image_process\\form_subtract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E42B1D7E-B4F3-4CD7-8919-19C2CD63816C}|image_process.csproj|solutionrelative:form_subtract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E42B1D7E-B4F3-4CD7-8919-19C2CD63816C}|image_process.csproj|C:\\Users\\Fate\\source\\repos\\image_process\\form_subtract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E42B1D7E-B4F3-4CD7-8919-19C2CD63816C}|image_process.csproj|solutionrelative:form_subtract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{E42B1D7E-B4F3-4CD7-8919-19C2CD63816C}|image_process.csproj|c:\\users\\fate\\source\\repos\\image_process\\form_histogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E42B1D7E-B4F3-4CD7-8919-19C2CD63816C}|image_process.csproj|solutionrelative:form_histogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E42B1D7E-B4F3-4CD7-8919-19C2CD63816C}|image_process.csproj|c:\\users\\fate\\source\\repos\\image_process\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -21,10 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{E42B1D7E-B4F3-4CD7-8919-19C2CD63816C}|image_process.csproj|C:\\Users\\Fate\\source\\repos\\image_process\\form_histogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E42B1D7E-B4F3-4CD7-8919-19C2CD63816C}|image_process.csproj|solutionrelative:form_histogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E42B1D7E-B4F3-4CD7-8919-19C2CD63816C}|image_process.csproj|c:\\users\\fate\\source\\repos\\image_process\\form_histogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E42B1D7E-B4F3-4CD7-8919-19C2CD63816C}|image_process.csproj|solutionrelative:form_histogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,11 +34,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Fate\\source\\repos\\image_process\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
@@ -46,11 +46,12 @@
               "RelativeToolTip": "Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-19T03:53:31.088Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\Fate\\source\\repos\\image_process\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
@@ -59,11 +60,12 @@
               "ViewState": "AgIAAJAAAAAAlZmZmZkVwLYAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-18T05:31:19.861Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "form_Histogram.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Fate\\source\\repos\\image_process\\form_Histogram.cs",
               "RelativeDocumentMoniker": "form_Histogram.cs",
@@ -71,11 +73,12 @@
               "RelativeToolTip": "form_Histogram.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-22T13:16:43.221Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "form_Histogram.cs",
               "DocumentMoniker": "C:\\Users\\Fate\\source\\repos\\image_process\\form_Histogram.cs",
               "RelativeDocumentMoniker": "form_Histogram.cs",
@@ -84,11 +87,12 @@
               "ViewState": "AgIAAAYAAAAAAAAAAAAAACIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-22T04:00:38.574Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "form_Subtract.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Fate\\source\\repos\\image_process\\form_Subtract.cs",
               "RelativeDocumentMoniker": "form_Subtract.cs",
@@ -101,13 +105,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "form_Subtract.cs",
               "DocumentMoniker": "C:\\Users\\Fate\\source\\repos\\image_process\\form_Subtract.cs",
               "RelativeDocumentMoniker": "form_Subtract.cs",
               "ToolTip": "C:\\Users\\Fate\\source\\repos\\image_process\\form_Subtract.cs",
               "RelativeToolTip": "form_Subtract.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAIwC4AAABSAAAAAAAAAA==",
+              "ViewState": "AgIAAIcAAAAA//////8vwHQAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-22T14:42:59.415Z",
               "IsPinned": true,
