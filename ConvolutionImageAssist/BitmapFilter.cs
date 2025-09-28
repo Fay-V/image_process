@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace image_convolution
+namespace image_process.ConvolutionImageAssist
 {
     public class BitmapFilter
     {
@@ -102,9 +102,9 @@ namespace image_convolution
 
             int stride2 = stride * 2;
 
-            System.IntPtr Scan0 = bmData.Scan0;
+            nint Scan0 = bmData.Scan0;
 
-            System.IntPtr SrcScan0 = bmSrc.Scan0;
+            nint SrcScan0 = bmSrc.Scan0;
 
             unsafe
             {
@@ -129,25 +129,25 @@ namespace image_convolution
 
                     {
 
-                        nPixel = ((((pSrc[2] * m.TopLeft) +
+                        nPixel = (pSrc[2] * m.TopLeft +
 
-                        (pSrc[5] * m.TopMid) +
+                        pSrc[5] * m.TopMid +
 
-                        (pSrc[8] * m.TopRight) +
+                        pSrc[8] * m.TopRight +
 
-                        (pSrc[2 + stride] * m.MidLeft) +
+                        pSrc[2 + stride] * m.MidLeft +
 
-                        (pSrc[5 + stride] * m.Pixel) +
+                        pSrc[5 + stride] * m.Pixel +
 
-                        (pSrc[8 + stride] * m.MidRight) +
+                        pSrc[8 + stride] * m.MidRight +
 
-                        (pSrc[2 + stride2] * m.BottomLeft) +
+                        pSrc[2 + stride2] * m.BottomLeft +
 
-                        (pSrc[5 + stride2] * m.BottomMid) +
+                        pSrc[5 + stride2] * m.BottomMid +
 
-                        (pSrc[8 + stride2] * m.BottomRight))
+                        pSrc[8 + stride2] * m.BottomRight)
 
-                        / m.Factor) + m.Offset);
+                        / m.Factor + m.Offset;
 
                         if (nPixel < 0) nPixel = 0;
 
@@ -155,25 +155,25 @@ namespace image_convolution
 
                         p[5 + stride] = (byte)nPixel;
 
-                        nPixel = ((((pSrc[1] * m.TopLeft) +
+                        nPixel = (pSrc[1] * m.TopLeft +
 
-                        (pSrc[4] * m.TopMid) +
+                        pSrc[4] * m.TopMid +
 
-                        (pSrc[7] * m.TopRight) +
+                        pSrc[7] * m.TopRight +
 
-                        (pSrc[1 + stride] * m.MidLeft) +
+                        pSrc[1 + stride] * m.MidLeft +
 
-                        (pSrc[4 + stride] * m.Pixel) +
+                        pSrc[4 + stride] * m.Pixel +
 
-                        (pSrc[7 + stride] * m.MidRight) +
+                        pSrc[7 + stride] * m.MidRight +
 
-                        (pSrc[1 + stride2] * m.BottomLeft) +
+                        pSrc[1 + stride2] * m.BottomLeft +
 
-                        (pSrc[4 + stride2] * m.BottomMid) +
+                        pSrc[4 + stride2] * m.BottomMid +
 
-                        (pSrc[7 + stride2] * m.BottomRight))
+                        pSrc[7 + stride2] * m.BottomRight)
 
-                        / m.Factor) + m.Offset);
+                        / m.Factor + m.Offset;
 
                         if (nPixel < 0) nPixel = 0;
 
@@ -181,25 +181,25 @@ namespace image_convolution
 
                         p[4 + stride] = (byte)nPixel;
 
-                        nPixel = ((((pSrc[0] * m.TopLeft) +
+                        nPixel = (pSrc[0] * m.TopLeft +
 
-                        (pSrc[3] * m.TopMid) +
+                        pSrc[3] * m.TopMid +
 
-                        (pSrc[6] * m.TopRight) +
+                        pSrc[6] * m.TopRight +
 
-                        (pSrc[0 + stride] * m.MidLeft) +
+                        pSrc[0 + stride] * m.MidLeft +
 
-                        (pSrc[3 + stride] * m.Pixel) +
+                        pSrc[3 + stride] * m.Pixel +
 
-                        (pSrc[6 + stride] * m.MidRight) +
+                        pSrc[6 + stride] * m.MidRight +
 
-                        (pSrc[0 + stride2] * m.BottomLeft) +
+                        pSrc[0 + stride2] * m.BottomLeft +
 
-                        (pSrc[3 + stride2] * m.BottomMid) +
+                        pSrc[3 + stride2] * m.BottomMid +
 
-                        (pSrc[6 + stride2] * m.BottomRight))
+                        pSrc[6 + stride2] * m.BottomRight)
 
-                        / m.Factor) + m.Offset);
+                        / m.Factor + m.Offset;
 
                         if (nPixel < 0) nPixel = 0;
 

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Text;
 using System.Runtime.InteropServices;
 
-namespace WebCamLib
+namespace image_process.DeviceAssist
 {
     public class DeviceManager
     {
@@ -15,15 +15,15 @@ namespace WebCamLib
 		
         [DllImport("avicap32.dll")]
         protected static extern bool capGetDriverDescriptionA(short wDriverIndex,
-            [MarshalAs(UnmanagedType.VBByRefStr)]ref String lpszName,
-           int cbName, [MarshalAs(UnmanagedType.VBByRefStr)] ref String lpszVer, int cbVer);
+            [MarshalAs(UnmanagedType.VBByRefStr)]ref string lpszName,
+           int cbName, [MarshalAs(UnmanagedType.VBByRefStr)] ref string lpszVer, int cbVer);
 
         static ArrayList devices = new ArrayList();
 
         public static Device[] GetAllDevices()
         {
-            String dName = "".PadRight(100);
-            String dVersion = "".PadRight(100);
+            string dName = "".PadRight(100);
+            string dVersion = "".PadRight(100);
 
             for (short i = 0; i < 10; i++)
             {

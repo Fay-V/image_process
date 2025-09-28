@@ -1,4 +1,4 @@
-﻿using image_convolution;
+﻿using image_process.ConvolutionImageAssist;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Text;
 using System.Runtime.InteropServices;
 
-namespace WebCamLib
+namespace image_process.DeviceAssist
 {
     public class Device
     {
@@ -74,7 +74,7 @@ namespace WebCamLib
 
         public override string ToString()
         {
-            return this.Name;
+            return Name;
         }
         /// <summary>
         /// To Initialize the device
@@ -84,10 +84,10 @@ namespace WebCamLib
         /// <param name="handle">The Control Handle to attach the device</param>
         public void Init(int windowHeight, int windowWidth, int handle)
         {
-            string deviceIndex = Convert.ToString(this.index);
+            string deviceIndex = Convert.ToString(index);
             deviceHandle = capCreateCaptureWindowA(ref deviceIndex, WS_VISIBLE | WS_CHILD, 0, 0, windowWidth, windowHeight, handle, 0);
 
-            if (SendMessage(deviceHandle, WM_CAP_DRIVER_CONNECT, this.index, 0) > 0)
+            if (SendMessage(deviceHandle, WM_CAP_DRIVER_CONNECT, index, 0) > 0)
             {
                 SendMessage(deviceHandle, WM_CAP_SET_SCALE, -1, 0);
 			    SendMessage(deviceHandle, WM_CAP_SET_PREVIEWRATE, 0x42, 0);
@@ -102,7 +102,7 @@ namespace WebCamLib
         /// </summary>
         /// <param name="windowsControl">Control to attach the webcam preview</param>
         ///                    global::  
-        public void ShowWindow(System.Windows.Forms.Control windowsControl )
+        public void ShowWindow(Control windowsControl )
         {
             Init(windowsControl.Height, windowsControl.Width , windowsControl.Handle.ToInt32());                        
         }
@@ -112,7 +112,7 @@ namespace WebCamLib
         /// </summary>
         public void Stop()
         {
-            SendMessage(deviceHandle, WM_CAP_DRIVER_DISCONNECT, this.index, 0);
+            SendMessage(deviceHandle, WM_CAP_DRIVER_DISCONNECT, index, 0);
             DestroyWindow(deviceHandle);
         }
 		public void Sendmessage()
