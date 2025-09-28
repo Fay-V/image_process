@@ -7,6 +7,9 @@
     <Compile Update="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="form_ConvolutionProcessing.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="form_Histogram.cs">
       <SubType>Form</SubType>
     </Compile>

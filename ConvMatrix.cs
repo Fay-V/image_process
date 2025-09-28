@@ -27,5 +27,31 @@ namespace image_convolution
             BottomLeft = BottomMid = BottomRight = nVal;
 
         }
+
+        public void SetRow ((int, int, int) tuple, int row)
+        {
+            if (row == 0)
+            {
+                TopLeft = tuple.Item1;
+                TopMid = tuple.Item2;
+                TopRight = tuple.Item3;
+            }
+            else if (row == 1)
+            {
+                MidLeft = tuple.Item1;
+                Pixel = tuple.Item2;
+                MidRight = tuple.Item3;
+            }
+            else if (row == 2)
+            {
+                BottomLeft = tuple.Item1;
+                BottomMid = tuple.Item2;
+                BottomRight = tuple.Item3;
+            }
+            else
+            {
+                throw new ArgumentOutOfRangeException("row", "Row must be 0, 1, or 2.");
+            }
+        }
     }
 }

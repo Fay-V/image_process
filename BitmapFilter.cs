@@ -9,6 +9,69 @@ namespace image_convolution
 {
     public class BitmapFilter
     {
+        public static bool Smooth (Bitmap b, int nWeight = 1)
+        {
+            ConvMatrix m = new ConvMatrix();
+            m.SetAll(1);
+            m.Pixel = nWeight;
+            m.Factor = nWeight + 8;
+            return Conv3x3(b, m);
+        }
+
+        public static bool GaussianBlur(Bitmap b, int nWeight = 16)
+        {
+            ConvMatrix m = new ConvMatrix();
+            m.SetRow((1, 2, 1), 0);
+            m.SetRow((2, 4, 2), 1);
+            m.SetRow((1, 2, 1), 2);
+            
+            m.Factor = nWeight;
+            return Conv3x3(b, m);
+        }
+
+        public static bool Sharpen(Bitmap b, int nWeight = 3)
+        {
+            ConvMatrix m = new ConvMatrix();
+            m.SetRow((0, -2, 0), 0);
+            m.SetRow((-2, 11, -2), 1);
+            m.SetRow((0, -2, 0), 2);
+
+            m.Factor = nWeight;
+            return Conv3x3(b, m);
+        }
+
+        public static bool MeanRemoval(Bitmap b, int nWeight = 1)
+        {
+            ConvMatrix m = new ConvMatrix();
+            m.SetRow((-1, -1, -1), 0);
+            m.SetRow((-1, 9, -1), 1);
+            m.SetRow((-1, -1, -1), 2);
+
+            m.Factor = nWeight;
+            return Conv3x3(b, m);
+        }
+
+        public static bool EmbossLaplascian(Bitmap b, int nWeight = 1)
+        {
+            ConvMatrix m = new ConvMatrix();
+            m.SetRow((-1, 0, -1), 0);
+            m.SetRow((0, 4, 0), 1);
+            m.SetRow((-1, 0, -1), 2);
+
+            m.Factor = nWeight;
+            m.Offset = 127;
+            return Conv3x3(b, m);
+        }
+
+
+
+
+
+
+
+
+
+        //MAIN FILTERING METHOD
         private static bool Conv3x3(Bitmap b, ConvMatrix m)
 
         {

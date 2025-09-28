@@ -41,6 +41,7 @@
             filters_colorInversion = new ToolStripMenuItem();
             filters_histogram = new ToolStripMenuItem();
             subtract_tab = new ToolStripMenuItem();
+            menu_OpenConvImage = new ToolStripMenuItem();
             openFileDialog1 = new OpenFileDialog();
             saveFileDialog1 = new SaveFileDialog();
             label_source = new Label();
@@ -72,7 +73,7 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { file_tab, filters_tab, subtract_tab });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { file_tab, filters_tab, subtract_tab, menu_OpenConvImage });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 24);
@@ -89,14 +90,14 @@
             // file_load_image
             // 
             file_load_image.Name = "file_load_image";
-            file_load_image.Size = new Size(137, 22);
+            file_load_image.Size = new Size(180, 22);
             file_load_image.Text = "Load Image";
             file_load_image.Click += file_load_Click;
             // 
             // file_save_image
             // 
             file_save_image.Name = "file_save_image";
-            file_save_image.Size = new Size(137, 22);
+            file_save_image.Size = new Size(180, 22);
             file_save_image.Text = "Save Image ";
             file_save_image.Click += file_save_Click;
             // 
@@ -148,6 +149,13 @@
             subtract_tab.Size = new Size(63, 20);
             subtract_tab.Text = "Subtract";
             subtract_tab.Click += subtract_tab_Click;
+            // 
+            // menu_OpenConvImage
+            // 
+            menu_OpenConvImage.Name = "menu_OpenConvImage";
+            menu_OpenConvImage.Size = new Size(181, 20);
+            menu_OpenConvImage.Text = "Convolution Image Processing";
+            menu_OpenConvImage.Click += menu_OpenConvImage_Click;
             // 
             // openFileDialog1
             // 
@@ -213,5 +221,6 @@
         private Label label_source;
         private Label label1;
         private ToolStripMenuItem subtract_tab;
+        private ToolStripMenuItem menu_OpenConvImage;
     }
 }

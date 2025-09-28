@@ -133,7 +133,7 @@ namespace image_process
                 for (int x = 0; x < original.Width; x++)
                 {
                     Color pixelColor = original.GetPixel(x, y);
-                    
+
                     int redValue = (int)(0.393 * pixelColor.R + 0.769 * pixelColor.G + 0.189 * pixelColor.B);
 
                     if (redValue < 0) { redValue = 0; }
@@ -173,7 +173,7 @@ namespace image_process
             Bitmap grayHistogram = histogram_maker.generate_GrayHistogram();
 
 
-            form_Histogram histogramForm = new form_Histogram(image_source,redHistogram,greenHistogram,blueHistogram,grayHistogram);
+            form_Histogram histogramForm = new form_Histogram(image_source, redHistogram, greenHistogram, blueHistogram, grayHistogram);
             histogramForm.Show();
         }
 
@@ -181,7 +181,7 @@ namespace image_process
         {
             form_Subtract subtractionForm = new form_Subtract();
             subtractionForm.Show();
-            
+
         }
 
 
@@ -190,6 +190,12 @@ namespace image_process
         private void Form1_Load(object sender, EventArgs e)
         {
             openFileDialog1.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp|All Files (*.*)|*.*";
+        }
+
+        private void menu_OpenConvImage_Click(object sender, EventArgs e)
+        {
+            form_ConvolutionProcessing form_ConvolutionProcessing = new form_ConvolutionProcessing();
+            form_ConvolutionProcessing.Show();
         }
     }
 }
