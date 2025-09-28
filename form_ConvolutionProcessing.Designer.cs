@@ -28,23 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             menuStrip1 = new MenuStrip();
             toolStripMenuItem9 = new ToolStripMenuItem();
             button_LoadImage = new ToolStripMenuItem();
             button_SaveImage = new ToolStripMenuItem();
             toolStripMenuItem2 = new ToolStripMenuItem();
-            toolStripMenuItem3 = new ToolStripMenuItem();
+            menu_WebCamToggle = new ToolStripMenuItem();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             openFileDialog1 = new OpenFileDialog();
             saveFileDialog1 = new SaveFileDialog();
             comboBox_Filters = new ComboBox();
-            textBox_Weight = new TextBox();
             label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            textBox_Offset = new TextBox();
             button_ExecuteFilter = new Button();
+            timer1 = new System.Windows.Forms.Timer(components);
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -82,16 +80,17 @@
             // 
             // toolStripMenuItem2
             // 
-            toolStripMenuItem2.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem3 });
+            toolStripMenuItem2.DropDownItems.AddRange(new ToolStripItem[] { menu_WebCamToggle });
             toolStripMenuItem2.Name = "toolStripMenuItem2";
             toolStripMenuItem2.Size = new Size(102, 20);
             toolStripMenuItem2.Text = "WebCam Mode";
             // 
-            // toolStripMenuItem3
+            // menu_WebCamToggle
             // 
-            toolStripMenuItem3.Name = "toolStripMenuItem3";
-            toolStripMenuItem3.Size = new Size(180, 22);
-            toolStripMenuItem3.Text = "Toggle On/Off (Off)";
+            menu_WebCamToggle.Name = "menu_WebCamToggle";
+            menu_WebCamToggle.Size = new Size(180, 22);
+            menu_WebCamToggle.Text = "Toggle On/Off (Off)";
+            menu_WebCamToggle.Click += menu_WebcamToggle_Click;
             // 
             // pictureBox1
             // 
@@ -119,18 +118,12 @@
             // 
             // comboBox_Filters
             // 
+            comboBox_Filters.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_Filters.FormattingEnabled = true;
             comboBox_Filters.Location = new Point(200, 405);
             comboBox_Filters.Name = "comboBox_Filters";
-            comboBox_Filters.Size = new Size(121, 23);
+            comboBox_Filters.Size = new Size(157, 23);
             comboBox_Filters.TabIndex = 3;
-            // 
-            // textBox_Weight
-            // 
-            textBox_Weight.Location = new Point(345, 405);
-            textBox_Weight.Name = "textBox_Weight";
-            textBox_Weight.Size = new Size(46, 23);
-            textBox_Weight.TabIndex = 4;
             // 
             // label1
             // 
@@ -141,31 +134,6 @@
             label1.TabIndex = 5;
             label1.Text = "Selected Filter";
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(345, 387);
-            label2.Name = "label2";
-            label2.Size = new Size(45, 15);
-            label2.TabIndex = 6;
-            label2.Text = "Weight";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(409, 387);
-            label3.Name = "label3";
-            label3.Size = new Size(39, 15);
-            label3.TabIndex = 7;
-            label3.Text = "Offset";
-            // 
-            // textBox_Offset
-            // 
-            textBox_Offset.Location = new Point(409, 405);
-            textBox_Offset.Name = "textBox_Offset";
-            textBox_Offset.Size = new Size(46, 23);
-            textBox_Offset.TabIndex = 8;
-            // 
             // button_ExecuteFilter
             // 
             button_ExecuteFilter.Location = new Point(518, 404);
@@ -174,6 +142,12 @@
             button_ExecuteFilter.TabIndex = 9;
             button_ExecuteFilter.Text = "Execute Filter";
             button_ExecuteFilter.UseVisualStyleBackColor = true;
+            button_ExecuteFilter.Click += button_ExecuteFilters_Click;
+            // 
+            // timer1
+            // 
+            timer1.Interval = 300;
+            timer1.Tick += timer1_Tick;
             // 
             // form_ConvolutionProcessing
             // 
@@ -181,11 +155,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(button_ExecuteFilter);
-            Controls.Add(textBox_Offset);
-            Controls.Add(label3);
-            Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(textBox_Weight);
             Controls.Add(comboBox_Filters);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
@@ -206,7 +176,7 @@
 
         private MenuStrip menuStrip1;
         private ToolStripMenuItem toolStripMenuItem2;
-        private ToolStripMenuItem toolStripMenuItem3;
+        private ToolStripMenuItem menu_WebCamToggle;
         private ToolStripMenuItem toolStripMenuItem9;
         private ToolStripMenuItem button_LoadImage;
         private ToolStripMenuItem button_SaveImage;
@@ -215,11 +185,8 @@
         private OpenFileDialog openFileDialog1;
         private SaveFileDialog saveFileDialog1;
         private ComboBox comboBox_Filters;
-        private TextBox textBox_Weight;
         private Label label1;
-        private Label label2;
-        private Label label3;
-        private TextBox textBox_Offset;
         private Button button_ExecuteFilter;
+        private System.Windows.Forms.Timer timer1;
     }
 }

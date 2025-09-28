@@ -9,7 +9,7 @@ namespace image_process.ConvolutionImageAssist
 {
     public class BitmapFilter
     {
-        public static bool Smooth (Bitmap b, int nWeight = 1)
+        public static bool Smooth (Bitmap b, int nWeight = 1, int nOffset = 0)
         {
             ConvMatrix m = new ConvMatrix();
             m.SetAll(1);
@@ -18,48 +18,51 @@ namespace image_process.ConvolutionImageAssist
             return Conv3x3(b, m);
         }
 
-        public static bool GaussianBlur(Bitmap b, int nWeight = 16)
+        public static bool GaussianBlur(Bitmap b, int nWeight = 0, int nOffset=0)
         {
             ConvMatrix m = new ConvMatrix();
             m.SetRow((1, 2, 1), 0);
             m.SetRow((2, 4, 2), 1);
             m.SetRow((1, 2, 1), 2);
             
-            m.Factor = nWeight;
+            m.Factor = 16 + nWeight;
+            m.Offset = nOffset;
             return Conv3x3(b, m);
         }
 
-        public static bool Sharpen(Bitmap b, int nWeight = 3)
+        public static bool Sharpen(Bitmap b, int nWeight = 0, int nOffset=0)
         {
             ConvMatrix m = new ConvMatrix();
             m.SetRow((0, -2, 0), 0);
             m.SetRow((-2, 11, -2), 1);
             m.SetRow((0, -2, 0), 2);
 
-            m.Factor = nWeight;
+            m.Factor = 3+nWeight;
+            m.Offset = nOffset;
             return Conv3x3(b, m);
         }
 
-        public static bool MeanRemoval(Bitmap b, int nWeight = 1)
+        public static bool MeanRemoval(Bitmap b, int nWeight = 0, int nOffset = 0)
         {
             ConvMatrix m = new ConvMatrix();
             m.SetRow((-1, -1, -1), 0);
             m.SetRow((-1, 9, -1), 1);
             m.SetRow((-1, -1, -1), 2);
 
-            m.Factor = nWeight;
+            m.Factor = 1+nWeight;
+            m.Offset = nOffset;
             return Conv3x3(b, m);
         }
 
-        public static bool EmbossLaplascian(Bitmap b, int nWeight = 1)
+        public static bool EmbossLaplascian(Bitmap b, int nWeight = 0, int nOffset = 0)
         {
             ConvMatrix m = new ConvMatrix();
             m.SetRow((-1, 0, -1), 0);
             m.SetRow((0, 4, 0), 1);
             m.SetRow((-1, 0, -1), 2);
 
-            m.Factor = nWeight;
-            m.Offset = 127;
+            m.Factor = 1+nWeight;
+            m.Offset = 127 + nOffset;
             return Conv3x3(b, m);
         }
 

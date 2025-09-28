@@ -50,7 +50,7 @@ namespace image_process
                         return;
                     }
                 }
-                
+
                 targetPictureBox.Image = image;
             }
         }
@@ -99,7 +99,7 @@ namespace image_process
             {
                 //execute subtraction repeatedly, no questions asked.
 
-                if(!webcam_subtraction)
+                if (!webcam_subtraction)
                 {
                     if (pictureBox_background == null)
                     {
@@ -111,7 +111,8 @@ namespace image_process
                     timer_Subtraction.Start();
                     button_executeSubtraction.Text = "Stop Subtraction";
                     webcam_subtraction = true;
-                } else if (webcam_subtraction)
+                }
+                else if (webcam_subtraction)
                 {
                     timer_Subtraction.Stop();
                     timer_ImageLoad.Start();
@@ -137,7 +138,7 @@ namespace image_process
                 return;
             }
 
-            
+
 
             Color mygreen = Color.FromArgb(0, 255, 0);
             int greygreen = (mygreen.R + mygreen.G + mygreen.B) / 3;
@@ -174,7 +175,7 @@ namespace image_process
         }
         // TIMER METHODS
 
-        
+
 
         private void timer_ImageLoad_Tick(object sender, EventArgs e)
         {
@@ -194,7 +195,7 @@ namespace image_process
         private void timer_Subtraction_Tick(object sender, EventArgs e)
         {
             Console.WriteLine("Subtraction webcamtick running");
-            
+
             if (myDevice != null)
             {
                 myDevice.Sendmessage();
@@ -214,7 +215,7 @@ namespace image_process
                 button_executeSubtraction.Text = "Subtraction";
                 webcam_subtraction = false;
                 MessageBox.Show("Images are lacking");
-                
+
                 return;
             }
 
@@ -228,7 +229,7 @@ namespace image_process
                 button_executeSubtraction.Text = "Subtraction";
                 webcam_subtraction = false;
                 MessageBox.Show("Image sizes do not match");
-                
+
                 return;
             }
             Color mygreen = Color.FromArgb(0, 255, 0);

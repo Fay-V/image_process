@@ -126,7 +126,7 @@
             // toggle_WebcamMode
             // 
             toggle_WebcamMode.Name = "toggle_WebcamMode";
-            toggle_WebcamMode.Size = new Size(180, 22);
+            toggle_WebcamMode.Size = new Size(178, 22);
             toggle_WebcamMode.Text = "Toggle On/Off (Off)";
             toggle_WebcamMode.Click += button_toggle_Webcam_Click;
             // 
