@@ -39,7 +39,10 @@ namespace image_process
         {
             if (webCamMode) 
             {
+                timer1.Stop();
+                index4WebCam = comboBox_Filters.SelectedIndex;
                 timer1.Start();
+                return;
             }
 
             
@@ -211,6 +214,37 @@ namespace image_process
                     Bitmap img = (Bitmap)Clipboard.GetImage();
                     pictureBox1.Image = img;
                     
+                    switch (index4WebCam)
+                    {
+                        case 0:
+                            
+                            filters_None_Click(sender, e);
+                            break;
+                        case 1:
+
+                            filters_Smooth_Click(sender, e);
+                            break;
+                        case 2:
+
+                            filters_GaussianBlur_Click(sender, e);
+                            break;
+                        case 3:
+
+                            filters_Sharpen_Click(sender, e);
+                            break;
+                        case 4:
+
+                            filters_MeanRemoval_Click(sender, e);
+                            break;
+                        case 5:
+
+                            filters_EmbossLasplascian_Click(sender, e);
+                            break;
+                        default:
+                            MessageBox.Show("Unknown filter selected.");
+                            break;
+                    }
+
                 }
 
             } 
@@ -221,45 +255,15 @@ namespace image_process
             }
                 
 
-            switch (index4WebCam)
-            {
-                case 0:
-
-                    filters_None_Click(sender, e);
-                    break;
-                case 1:
-
-                    filters_Smooth_Click(sender, e);
-                    break;
-                case 2:
-
-                    filters_GaussianBlur_Click(sender, e);
-                    break;
-                case 3:
-
-                    filters_Sharpen_Click(sender, e);
-                    break;
-                case 4:
-
-                    filters_MeanRemoval_Click(sender, e);
-                    break;
-                case 5:
-
-                    filters_EmbossLasplascian_Click(sender, e);
-                    break;
-                default:
-                    MessageBox.Show("Unknown filter selected.");
-                    break;
-            }
+            
         }
 
         //FILTERS
 
         private void filters_None_Click(object sender, EventArgs e)
         {
-            if (pictureBox1.Image == null)
+            if(pictureBox1.Image == null)
             {
-                pictureBox2.Image = null;
                 return;
             }
 
@@ -270,8 +274,6 @@ namespace image_process
         {
             if (pictureBox1.Image == null)
             {
-                pictureBox2.Image = null;
-                MessageBox.Show("No image to process.");
                 return;
             }
 
@@ -293,8 +295,6 @@ namespace image_process
         {
             if (pictureBox1.Image == null)
             {
-                pictureBox2.Image = null;
-                MessageBox.Show("No image to process.");
                 return;
             }
 
@@ -313,8 +313,6 @@ namespace image_process
         {
             if (pictureBox1.Image == null)
             {
-                pictureBox2.Image = null;
-                MessageBox.Show("No image to process.");
                 return;
             }
             Bitmap original = new Bitmap(pictureBox1.Image);
@@ -332,8 +330,6 @@ namespace image_process
         {
             if (pictureBox1.Image == null)
             {
-                pictureBox2.Image = null;
-                MessageBox.Show("No image to process.");
                 return;
             }
             Bitmap original = new Bitmap(pictureBox1.Image);
@@ -351,8 +347,6 @@ namespace image_process
         {
             if (pictureBox1.Image == null)
             {
-                pictureBox2.Image = null;
-                MessageBox.Show("No image to process.");
                 return;
             }
             Bitmap original = new Bitmap(pictureBox1.Image);
